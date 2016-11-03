@@ -22,15 +22,13 @@ describe('Bubble Sort', function(){
 describe('A spy', function() {
 
 
-
-
 it("tracks the number of times swap was called", function() {
     expect(swap.calls.count()).toEqual(0);
 
     var arr = [4, 6, 7, 2, 1];
    	bubbleSort(arr);
 
-    expect(swap.calls.count()).toEqual();
+    expect(swap.calls.count()).toEqual(7);
   });
 
   it("tracks the number of times comparison was called", function() {
@@ -39,6 +37,6 @@ it("tracks the number of times swap was called", function() {
     var arr = [4, 6, 7, 2, 1];
     bubbleSort(arr);
 
-    expect(comparison.calls.count()).toEqual(2);
+    expect(comparison.calls.count()).toEqual(19);
   });
 });

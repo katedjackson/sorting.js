@@ -1,19 +1,18 @@
-function bubbleSort(arr) {
+var comparison = function(a, b) {
+  return (a < b) ? true : false;
+};
+
+var swap = function(arr, a, b) {
+  var hold = arr[b];
+  arr[b] = arr[a];
+  arr[a] = hold;
+};
+
+var bubbleSort = function(arr) {
 
   var swapped = true;
 
   if (arr.length === 1) return arr;
-
-
-  function comparison(a, b) {
-    return (a < b) ? true : false;
-  }
-
-  function swap(arr, a, b) {
-    var hold = arr[b];
-    arr[b] = arr[a];
-    arr[a] = hold;
-  }
 
   while (swapped) {
     swapped = false;
@@ -25,9 +24,8 @@ function bubbleSort(arr) {
     }
   }
 
-
   return arr;
-}
+};
 
 
 // function bubbleSort(list of sortable items ) 

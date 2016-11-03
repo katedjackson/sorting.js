@@ -15,28 +15,31 @@ describe('Bubble Sort', function(){
     expect( bubbleSort(arr) ).toEqual( ['a', 'c', 'd', 'e'] );
     var arr = [3, 2, 4, 1];
     expect( bubbleSort(arr) ).toEqual( [1, 2, 3, 4] );
+
   });
 
 });
+
+
 
 describe('A spy', function() {
 
 
-it("tracks the number of times swap was called", function() {
-    expect(swap.calls.count()).toEqual(0);
+  it("tracks the number of times swap was called", function() {
 
-    var arr = [4, 6, 7, 2, 1];
-   	bubbleSort(arr);
-
+    spyOn(window, "swap").and.callThrough();
+    bubbleSort([4,6,7,2,1]);
     expect(swap.calls.count()).toEqual(7);
   });
 
   it("tracks the number of times comparison was called", function() {
-    expect(comparison.calls.count()).toEqual(0);
 
-    var arr = [4, 6, 7, 2, 1];
-    bubbleSort(arr);
-
-    expect(comparison.calls.count()).toEqual(19);
+     spyOn(window, "comparison").and.callThrough();
+     bubbleSort([4,6,7,2,1]);
+     expect(comparison.calls.count()).toEqual(20);
   });
 });
+
+
+
+
